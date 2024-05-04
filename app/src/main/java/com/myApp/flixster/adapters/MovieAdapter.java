@@ -12,6 +12,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
+import com.bumptech.glide.request.target.Target;
 import com.myApp.flixster.GlideApp;
 import com.myApp.flixster.R;
 import com.myApp.flixster.models.Movie;
@@ -49,6 +51,9 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
 
         GlideApp.with(holder.mView.getContext())
                 .load(image)
+                .override(Target.SIZE_ORIGINAL)
+                .placeholder(R.drawable.movie)
+                .transition(DrawableTransitionOptions.withCrossFade(5000))
                 .into(holder.iv_movie);
     }
 

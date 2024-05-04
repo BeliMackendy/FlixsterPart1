@@ -10,6 +10,7 @@
         android:layout_width="350dp"
         android:layout_height="wrap_content"
 
+        android:scaleType="fitXY"
         tools:ignore="ContentDescription,ImageContrastCheck" />
 
     <TextView
