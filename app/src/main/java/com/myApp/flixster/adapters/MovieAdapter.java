@@ -12,6 +12,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
 import com.bumptech.glide.request.target.Target;
 import com.myApp.flixster.GlideApp;
@@ -53,6 +54,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
                 .load(image)
                 .override(Target.SIZE_ORIGINAL)
                 .placeholder(R.drawable.movie)
+                .transform(new RoundedCorners(30))
                 .transition(DrawableTransitionOptions.withCrossFade(5000))
                 .into(holder.iv_movie);
     }
