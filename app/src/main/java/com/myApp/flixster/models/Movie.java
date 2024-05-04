@@ -9,11 +9,13 @@ import java.util.List;
 
 public class Movie {
     String posterPath;
+    String backdropPath;
     String title;
     String overview;
 
     public Movie(JSONObject MovieObject) throws JSONException {
         posterPath = MovieObject.getString("poster_path");
+        backdropPath = MovieObject.getString("backdrop_path");
         title = MovieObject.getString("title");
         overview = MovieObject.getString("overview");
     }
@@ -28,6 +30,10 @@ public class Movie {
 
     public String getPosterPath() {
         return String.format("https://image.tmdb.org/t/p/w342/%s", posterPath);
+    }
+
+    public String getBackdropPath() {
+        return String.format("https://image.tmdb.org/t/p/w300/%s", backdropPath);
     }
 
     public String getTitle() {
